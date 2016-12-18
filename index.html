@@ -1,0 +1,49 @@
+<!-- color sliders
+		 a work in progress, based on a prototype I made in Processing in Oct 2015 -->
+<html>
+	<head>
+		<title>Rothko | Three Right Angles</title>
+		<style>
+			body { margin: 0; padding 0; }
+			//canvas { width: 100%; height: 100%; margin: 0; padding 0: }
+		</style>
+		<link rel=stylesheet href="css/stylesheet.css">
+		<script src="mousePrimitives.js" type="text/javascript"></script>
+		<meta charset="utf-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=.5"> -->
+	</head>
+
+
+	<body id="body" onkeydown="handleKeyOnCanvas(event)"  ontouchcancel="handleTouchEnd(event)" onmouseup="handleMouseUp(event)">
+
+	<div id="wrapper">
+	<canvas id="sandbox" 
+					onclick = "void(0)"
+					
+					ontouchstart="handleTouchStart(event)" 
+					ontouchmove="handleTouchMove(event)"
+					ontouchend="handleTouchEnd(event)"
+					onmousedown="handleMouseDown(event)" 
+					onmousemove="handleMouseMove(event)"
+					onkeydown="handleKeyOnCanvas(event)"
+
+					height="100%" width="100%">
+					<!--height="390px" width="1070px">-->
+					
+	</canvas>
+	<div id="console"></div>
+				<script>
+					var hint_no = 0;
+					var hints = [ "You can change the backdrop too, just click on it.",
+											 "Press &lt;Enter&gt; to alter the numerical representation of your color."];
+					showHint();
+					function showHint() {
+						console.log("in showHint()");
+						document.getElementById("console").innerHTML="Hint: " + hints[hint_no];
+					}
+				</script>
+	
+	</div>
+		<script src="colorSliders.js"></script>
+	</body>
+</html>
